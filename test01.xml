@@ -39,7 +39,11 @@
                         <next>
                           <block type="movement_stutter" id="197">
                             <next>
-                              <block type="movement_stop" id="213"></block>
+                              <block type="movement_stop" id="213">
+                                <next>
+                                  <block type="movement_forward" id="214"></block>
+                                </next>
+                              </block>
                             </next>
                           </block>
                         </next>
