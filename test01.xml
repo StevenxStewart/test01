@@ -44,7 +44,12 @@
                               </block>
                             </value>
                             <next>
-                              <block type="movement_forward" id="223"></block>
+                              <block type="oled_color" id="246">
+                                <field name="OBJECT">BLACK</field>
+                                <next>
+                                  <block type="movement_forward" id="223"></block>
+                                </next>
+                              </block>
                             </next>
                           </block>
                         </next>
@@ -59,7 +64,37 @@
       </block>
     </statement>
     <next>
-      <block type="movement_stop" id="213"></block>
+      <block type="movement_stop" id="213">
+        <next>
+          <block type="movement_stutter" id="270">
+            <next>
+              <block type="movement_leftmotor" id="280" inline="true">
+                <value name="MOVLEFT">
+                  <block type="math_number" id="287">
+                    <field name="NUM">1</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="movement_stutter" id="288">
+                    <next>
+                      <block type="movement_rightmotor" id="338" inline="true">
+                        <value name="MOVRIGHT">
+                          <block type="math_number" id="339">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="movement_stutter" id="340"></block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
     </next>
   </block>
 </xml>
