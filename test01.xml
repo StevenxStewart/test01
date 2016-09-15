@@ -4,11 +4,32 @@
       <block type="robot_delay" id="12" inline="true">
         <value name="DELAY">
           <block type="math_number" id="19">
-            <field name="NUM">3000</field>
+            <field name="NUM">5000</field>
           </block>
         </value>
         <next>
-          <block type="movement_stop" id="29"></block>
+          <block type="controls_if" id="60" inline="false">
+            <value name="IF0">
+              <block type="sensor_object" id="67">
+                <field name="OBJECT">RIGHTFRONT</field>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="movement_reverse" id="77"></block>
+            </statement>
+            <next>
+              <block type="controls_if" id="127" inline="false">
+                <value name="IF0">
+                  <block type="sensor_object" id="143">
+                    <field name="OBJECT">LEFTFRONT</field>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="movement_reverse" id="144"></block>
+                </statement>
+              </block>
+            </next>
+          </block>
         </next>
       </block>
     </next>
