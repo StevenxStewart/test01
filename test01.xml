@@ -1,49 +1,45 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="movement_forward" id="10" x="-714" y="18">
-    <next>
-      <block type="robot_delay" id="12" inline="true">
-        <value name="DELAY">
-          <block type="math_number" id="19">
-            <field name="NUM">5000</field>
-          </block>
-        </value>
+  <block type="controls_repeat" id="222" inline="true" x="-741" y="-13">
+    <statement name="DO">
+      <block type="movement_forward" id="10">
         <next>
-          <block type="controls_if" id="60" inline="false">
-            <value name="IF0">
-              <block type="sensor_object" id="67">
-                <field name="OBJECT">RIGHTFRONT</field>
+          <block type="robot_delay" id="12" inline="true">
+            <value name="DELAY">
+              <block type="math_number" id="19">
+                <field name="NUM">5000</field>
               </block>
             </value>
-            <statement name="DO0">
-              <block type="movement_reverse" id="77"></block>
-            </statement>
             <next>
-              <block type="controls_if" id="127" inline="false">
+              <block type="controls_if" id="60" inline="false">
                 <value name="IF0">
-                  <block type="sensor_object" id="143">
-                    <field name="OBJECT">LEFTFRONT</field>
+                  <block type="sensor_object" id="67">
+                    <field name="OBJECT">RIGHTFRONT</field>
                   </block>
                 </value>
                 <statement name="DO0">
-                  <block type="movement_reverse" id="144"></block>
+                  <block type="movement_reverse" id="77"></block>
                 </statement>
                 <next>
-                  <block type="movement_left" id="163">
+                  <block type="controls_if" id="127" inline="false">
+                    <value name="IF0">
+                      <block type="sensor_object" id="143">
+                        <field name="OBJECT">LEFTFRONT</field>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="movement_reverse" id="144"></block>
+                    </statement>
                     <next>
-                      <block type="robot_delay" id="180" inline="true">
-                        <value name="DELAY">
-                          <block type="math_number" id="187">
-                            <field name="NUM">2600</field>
-                          </block>
-                        </value>
+                      <block type="movement_left" id="163">
                         <next>
-                          <block type="movement_stutter" id="197">
-                            <next>
-                              <block type="movement_stop" id="213">
-                                <next>
-                                  <block type="movement_forward" id="214"></block>
-                                </next>
+                          <block type="robot_delay" id="180" inline="true">
+                            <value name="DELAY">
+                              <block type="math_number" id="187">
+                                <field name="NUM">2600</field>
                               </block>
+                            </value>
+                            <next>
+                              <block type="movement_stutter" id="197"></block>
                             </next>
                           </block>
                         </next>
@@ -56,6 +52,9 @@
           </block>
         </next>
       </block>
+    </statement>
+    <next>
+      <block type="movement_stop" id="213"></block>
     </next>
   </block>
 </xml>
