@@ -27,6 +27,26 @@
                 <statement name="DO0">
                   <block type="movement_reverse" id="144"></block>
                 </statement>
+                <next>
+                  <block type="movement_left" id="163">
+                    <next>
+                      <block type="robot_delay" id="180" inline="true">
+                        <value name="DELAY">
+                          <block type="math_number" id="187">
+                            <field name="NUM">2600</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="movement_stutter" id="197">
+                            <next>
+                              <block type="movement_stop" id="213"></block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
               </block>
             </next>
           </block>
